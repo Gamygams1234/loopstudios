@@ -1,0 +1,51 @@
+// Colors
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$veryDarkGray: hsl(0, 0%, 41%);
+
+.fw-400 {
+    font-weight: 400;
+    font-family: "Alata", sans-serif;
+}
+.fw-300 {
+    font-weight: 300;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+    background-image: url(../images/desktop/image-hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .right-side {
+            display: flex;
+            align-items: center;
+            a {
+                text-decoration: none;
+                align-items: center;
+                color: $white;
+                font-weight: 300;
+                font-family: "Josefin Sans", sans-serif;
+                margin: 0 10px;
+            }
+            a:last-child {
+                margin: 0 0 0 10px;
+            }
+        }
+    }
+    .graphic {
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+            max-width: 550px;
+            padding: 10px;
+            border: 1px $white solid;
+            font-size: 4em;
+        }
+    }
+}
