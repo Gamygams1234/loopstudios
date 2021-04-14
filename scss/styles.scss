@@ -13,6 +13,17 @@ $veryDarkGray: hsl(0, 0%, 41%);
     font-family: "Josefin Sans", sans-serif;
 }
 
+.padding-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.margin-container {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.desktop-image {
+    display: none;
+}
 header {
     background-image: url(../images/desktop/image-hero.jpg);
     background-position: center;
@@ -23,18 +34,14 @@ header {
         justify-content: space-between;
         align-items: center;
         .right-side {
-            display: flex;
-            align-items: center;
-            a {
-                text-decoration: none;
-                align-items: center;
-                color: $white;
-                font-weight: 300;
-                font-family: "Josefin Sans", sans-serif;
-                margin: 0 10px;
+            .links {
+                display: none;
             }
-            a:last-child {
-                margin: 0 0 0 10px;
+            .icon {
+                display: flex;
+                align-items: center;
+                color: white;
+                font-size: 2em;
             }
         }
     }
@@ -45,7 +52,139 @@ header {
             max-width: 550px;
             padding: 10px;
             border: 1px $white solid;
-            font-size: 4em;
+            font-size: 2.5em;
+            margin: 0 auto 0 0;
+        }
+    }
+}
+
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    .image {
+        img {
+            width: 100%;
+        }
+    }
+    .description {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        h1 {
+            text-transform: uppercase;
+        }
+        p {
+            line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .padding-container {
+        padding-left: 82px;
+        padding-right: 82px;
+    }
+    .margin-container {
+        margin-left: 82px;
+        margin-right: 82px;
+    }
+    .mobile-image {
+        display: none;
+    }
+    .desktop-image {
+        display: block;
+    }
+
+    header {
+        .navigation {
+            .right-side {
+                .links {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        margin: 0 10px;
+                        a {
+                            position: relative;
+                            text-decoration: none;
+                            align-items: center;
+                            color: $white;
+                            font-weight: 300;
+                            font-family: "Josefin Sans", sans-serif;
+                        }
+                        a:last-child {
+                            margin: 0 0 0 10px;
+                        }
+                        a::after {
+                            content: "";
+                            width: 50%;
+                            height: 0.125rem;
+                            left: 50%;
+                            bottom: -0.4rem;
+                            visibility: hidden;
+                            -webkit-animation: fadeOut 0.4s ease-in-out forwards;
+                            animation: fadeOut 0.4s ease-in-out forwards;
+                            position: absolute;
+                            background-color: #fff;
+                            -webkit-transform: translateX(-50%);
+                            transform: translateX(-50%);
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+                    li:hover {
+                        a::after {
+                            visibility: visible;
+                        }
+                    }
+                }
+                .icon {
+                    display: none;
+                }
+            }
+        }
+        .graphic {
+            h1 {
+                font-size: 4em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .padding-container {
+        padding-left: 168px;
+        padding-right: 168px;
+    }
+    .margin-container {
+        margin-left: 168px;
+        margin-right: 168px;
+    }
+    header {
+        .navigation {
+            .right-side {
+            }
+        }
+    }
+    .section-1 {
+        position: relative;
+        .image {
+            .desktop-image {
+                width: 80%;
+                min-width: 600px;
+            }
+        }
+        .description {
+            padding-bottom: 0px;
+            padding-left: 3em;
+            padding-right: 3em;
+            text-align: left;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            width: 400px;
+            background-color: white;
         }
     }
 }
