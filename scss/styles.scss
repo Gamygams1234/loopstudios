@@ -80,6 +80,46 @@ header {
         }
     }
 }
+.section-2 {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        .grid-item {
+            position: relative;
+            margin-top: 20px;
+            margin-top: 20px;
+            border-radius: 0.25em;
+            overflow: hidden;
+            transition: all ease-in-out 0.3s;
+            img {
+                width: 100%;
+                transition: all ease-in-out 0.3s;
+            }
+            h3 {
+                color: white;
+                position: absolute;
+                padding: 20px;
+                bottom: 0px;
+                left: 0px;
+                width: 25%;
+                font-size: 2em;
+                transition: all ease-in-out 0.3s;
+            }
+        }
+        .grid-item:hover {
+            img {
+                filter: blur(8px);
+            }
+            h3 {
+                text-shadow: 0 0 1.75px $white, 0 0 1.75px $white;
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 768px) {
     .padding-container {
